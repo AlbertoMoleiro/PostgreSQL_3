@@ -29,7 +29,7 @@ CREATE TABLE SOCIOS(
     apellidos VARCHAR(100) NOT NULL,
     telefono VARCHAR(20) NOT NULL,
     dni VARCHAR(9) NOT NULL,
-    id_socio_aval INTEGER,
+    id_socio_aval INTEGER NOT NULL,
     id_poblacion INTEGER NOT NULL,
     FOREIGN KEY (id_socio_aval) REFERENCES SOCIOS(id_socio)
 );
@@ -85,6 +85,14 @@ CREATE TABLE DETALLE_PEDIDOS(
     FOREIGN KEY (id_libro) REFERENCES LIBROS(id_libro),
     PRIMARY KEY (id_pedido,id_socio,id_libro)
 );
+
+
+
+INSERT INTO COLECCIONES (ISBN, titulo, editorial, volumenes) VALUES ('978-84-376-0494-7', 'El señor de los anillos', 'Minotauro', 3);
+INSERT INTO COLECCIONES (ISBN, titulo, editorial, volumenes) VALUES ('978-84-450-7700-0', 'El hobbit', 'Minotauro', 1);
+
+INSERT INTO LIBROS (ISBN, titulo, autor, editorial, id_coleccion) VALUES ('978-84-376-0494-7', 'La comunidad del anillo', 'J.R.R. Tolkien', 'Minotauro', 1);
+INSERT INTO LIBROS (ISBN, titulo, autor, editorial, id_coleccion) VALUES ('978-84-376-0494-7', 'Las dos torres', 'J.R.R. Tolkien', 'Minotauro', 1);
 
 
 
